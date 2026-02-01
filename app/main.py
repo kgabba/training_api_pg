@@ -4,6 +4,7 @@ from router import router_test
 import psycopg2
 from contextlib import asynccontextmanager
 import os
+import time
 
 
 DB_URL = os.getenv('DB_URL')
