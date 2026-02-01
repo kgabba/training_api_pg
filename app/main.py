@@ -11,6 +11,7 @@ DB_URL = os.getenv('DB_URL')
 @asynccontextmanager
 async def lifespan(api: FastAPI):
     try:
+        time.sleep(7)  # Ждем немного, чтобы база данных могла запуститься
         api.state.conn = psycopg2.connect(DB_URL)
         api.state.conn.autocommit = True
         print('подключение БД успешно создано')
